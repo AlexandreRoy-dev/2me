@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2ME Protection | Gaine de Protection Industrielle</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f172a', // Even darker slate for a more premium contrast
+                        brand: '#00569d', 
+                        brandDark: '#003f75', 
+                        brandLight: '#e0f2fe',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-up': 'fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Premium Glassmorphism & Scroll States */
+        #navbar {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .nav-scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+        .nav-transparent {
+            background-color: transparent;
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+        }
+        
+        /* Dynamic text colors for nav based on scroll */
+        .nav-text-light { color: #f8fafc; }
+        .nav-text-dark { color: #1e293b; }
+        
+        /* Subtle glowing background mesh */
+        .hero-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0,86,157,0.4) 0%, rgba(0,0,0,0) 70%);
+            top: -100px;
+            right: -100px;
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: 0;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-50 flex flex-col min-h-screen">
+
+    <nav id="navbar" class="nav-transparent fixed w-full z-50 transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                
+                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer group">
+                    <div class="w-12 h-12 bg-brand text-white flex items-center justify-center rounded-xl font-bold text-xl shadow-lg shadow-brand/30 group-hover:scale-105 transition-transform duration-300">
+                        2ME
+                    </div>
+                    <span id="nav-brand-text" class="font-bold text-2xl nav-text-light tracking-tight transition-colors duration-300">Protection</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#produit" class="nav-link nav-text-light hover:text-brand font-medium transition-colors duration-300">Le Produit</a>
+                    <a href="#applications" class="nav-link nav-text-light hover:text-brand font-medium transition-colors duration-300">Applications</a>
+                    <a href="#distributeurs" class="nav-link nav-text-light flex items-center gap-2 hover:text-brand font-medium transition-colors duration-300">
+                        <i class="fa-solid fa-handshake text-brand"></i> Espace Distributeurs
+                    </a>
+                    <a href="#contact" class="bg-brand text-white px-7 py-2.5 rounded-lg hover:bg-brandDark transition-all shadow-lg shadow-brand/20 hover:shadow-brand/40 hover:-translate-y-0.5 font-semibold">
+                        Obtenir un devis
+                    </a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="nav-text-light hover:text-brand focus:outline-none transition-colors duration-300">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden absolute w-full bg-white shadow-xl border-t border-gray-100">
+            <div class="px-4 pt-4 pb-6 space-y-3">
+                <a href="#produit" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand hover:bg-slate-50 rounded-md">Le Produit</a>
+                <a href="#distributeurs" class="block px-3 py-2 text-base font-medium text-brand bg-brand/5 rounded-md"><i class="fa-solid fa-handshake mr-2"></i> Espace Distributeurs</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-white bg-brand text-center rounded-md mt-4">Obtenir un devis</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="accueil" class="relative min-h-[95vh] flex items-center pt-20 overflow-hidden bg-primary">
+        
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1580983554867-27b3d3de1e86?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Industrial Background" class="w-full h-full object-cover opacity-20 mix-blend-overlay">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-[#002f56]/90"></div>
+            <div class="hero-glow animate-pulse-slow"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid lg:grid-cols-2 gap-12 items-center">
+            
+            <div class="pr-lg-8 pt-10">
+                <div class="opacity-0 animate-fade-up" style="animation-delay: 0.1s;">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-400/30 bg-blue-900/40 backdrop-blur-md mb-8">
+                        <span class="relative flex h-3 w-3">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
+                        </span>
+                        <span class="text-blue-100 text-sm font-medium tracking-wide">Fièrement conçu et fabriqué au Canada</span>
+                        <i class="fa-brands fa-canadian-maple-leaf text-red-400 ml-1"></i>
+                    </div>
+                </div>
+
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6 text-white opacity-0 animate-fade-up" style="animation-delay: 0.3s;">
+                    L'enveloppe protectrice <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-brand">innovante</span> de vos installations.
+                </h1>
+                
+                <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-xl opacity-0 animate-fade-up leading-relaxed" style="animation-delay: 0.5s;">
+                    La Gaine 20618 est la solution ré-ouvrable en PVC souple homologuée NFPA. Conçue pour résister aux environnements industriels les plus hostiles.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-5 opacity-0 animate-fade-up" style="animation-delay: 0.7s;">
+                    <a href="#contact" class="flex items-center justify-center gap-3 bg-brand text-white px-8 py-4 rounded-xl font-semibold hover:bg-brandLight hover:text-brand transition-all duration-300 shadow-lg shadow-brand/30 hover:-translate-y-1">
+                        Équiper mon entreprise <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#distributeurs" class="flex items-center justify-center gap-3 bg-white/5 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition-all duration-300 hover:-translate-y-1">
+                        Devenir Distributeur <i class="fa-solid fa-network-wired"></i>
+                    </a>
+                </div>
+                
+                <div class="mt-12 flex items-center gap-6 opacity-0 animate-fade-up" style="animation-delay: 0.9s;">
+                    <div class="flex items-center gap-2 text-slate-400 text-sm font-medium">
+                        <i class="fa-solid fa-check-circle text-brand"></i> Certification NFPA
+                    </div>
+                    <div class="flex items-center gap-2 text-slate-400 text-sm font-medium">
+                        <i class="fa-solid fa-check-circle text-brand"></i> Sans Couture
+                    </div>
+                    <div class="flex items-center gap-2 text-slate-400 text-sm font-medium">
+                        <i class="fa-solid fa-check-circle text-brand"></i> B2B & Gros
+                    </div>
+                </div>
+            </div>
+
+            <div class="hidden lg:block relative h-[600px] opacity-0 animate-fade-up" style="animation-delay: 0.6s;">
+                <div class="absolute inset-0 flex items-center justify-center animate-float">
+                    <div class="relative w-4/5 h-4/5">
+                        <div class="absolute inset-0 border border-brand/30 rounded-3xl transform rotate-3"></div>
+                        <div class="absolute inset-0 bg-gradient-to-tr from-brand/20 to-transparent rounded-3xl backdrop-blur-sm border border-white/10 shadow-2xl overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gaine Protectrice 20618" class="w-full h-full object-cover mix-blend-overlay opacity-80">
+                            
+                            <div class="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-5 shadow-2xl">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p class="text-white font-bold text-lg">Modèle 20618</p>
+                                        <p class="text-blue-200 text-sm">PVC Souple Ré-ouvrable</p>
+                                    </div>
+                                    <div class="h-10 w-10 rounded-full bg-brand flex items-center justify-center text-white shadow-lg shadow-brand/40">
+                                        <i class="fa-solid fa-shield-halved"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-fade-up" style="animation-delay: 1.2s;">
+            <span class="text-slate-400 text-xs font-medium uppercase tracking-widest">Défiler</span>
+            <div class="w-[1px] h-12 bg-gradient-to-b from-brand to-transparent"></div>
+        </div>
+    </section>
+
+    <section id="produit" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                
+                <div class="lg:col-span-7 lg:sticky lg:top-32 z-10">
+                    <div class="group relative rounded-3xl overflow-hidden bg-gray-100 aspect-w-4 aspect-h-3 shadow-2xl ring-1 ring-gray-900/5">
+                        <img src="https://images.unsplash.com/photo-1504917595217-d4f39066cb32?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Gaine Protectrice 20618" class="object-cover w-full h-full transform transition-transform duration-700 group-hover:scale-105">
+                        
+                        <div class="absolute top-6 left-6 flex flex-col gap-2">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 backdrop-blur-sm text-xs font-bold text-brand shadow-sm border border-gray-200 uppercase tracking-wider">
+                                <i class="fa-solid fa-star"></i> Produit Phare
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-4 mt-4">
+                        <div class="rounded-xl overflow-hidden bg-gray-100 aspect-w-1 aspect-h-1 ring-1 ring-gray-900/5 cursor-pointer hover:opacity-80 transition-opacity">
+                            <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Détail sans couture" class="object-cover w-full h-full">
+                        </div>
+                        <div class="rounded-xl overflow-hidden bg-gray-100 aspect-w-1 aspect-h-1 ring-1 ring-gray-900/5 cursor-pointer hover:opacity-80 transition-opacity flex items-center justify-center bg-brand/5">
+                            <i class="fa-solid fa-magnifying-glass-plus text-2xl text-brand/50"></i>
+                        </div>
+                        <div class="rounded-xl overflow-hidden bg-gray-900 p-4 ring-1 ring-gray-900/5 flex flex-col justify-center items-center text-center cursor-pointer hover:bg-gray-800 transition-colors">
+                            <i class="fa-solid fa-file-word text-3xl text-blue-400 mb-2"></i>
+                            <span class="text-white text-xs font-medium">Voir la fiche technique</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 flex flex-col pt-4 lg:pt-0">
+                    
+                    <div class="mb-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-sm font-semibold text-slate-400 tracking-widest uppercase">SKU: GAINE-20618</span>
+                            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-green-50 text-green-700 text-xs font-bold border border-green-200">
+                                <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span> En Stock
+                            </span>
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight mb-4">
+                            Gaine Protectrice en PVC Souple (NFPA)
+                        </h2>
+                        <p class="text-lg text-slate-600 leading-relaxed">
+                            Système ré-ouvrable sans couture extérieure. Permet une installation rapide sur les boyaux fixes, l'inspection et la mise à niveau sans démontage.
+                        </p>
+                    </div>
+
+                    <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 mb-8">
+                        <div class="flex items-end gap-2 mb-1">
+                            <span class="text-4xl font-bold text-brand">545,18 $</span>
+                            <span class="text-slate-500 font-medium mb-1">CAD / unité</span>
+                        </div>
+                        <p class="text-sm text-slate-400 mt-2 flex items-start gap-2">
+                            <i class="fa-solid fa-circle-info mt-0.5"></i>
+                            <span>Prix au détail hors taxes. F.O.B Sherbrooke. Tarif distributeur sur demande.</span>
+                        </p>
+                    </div>
+
+                    <h3 class="text-lg font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2">Spécifications Techniques</h3>
+                    <div class="grid grid-cols-2 gap-y-4 gap-x-6 mb-8">
+                        <div class="flex flex-col">
+                            <span class="text-sm text-slate-500 mb-1 flex items-center gap-2"><i class="fa-solid fa-ruler-horizontal text-brand/70"></i> Longueur Totale</span>
+                            <span class="font-semibold text-slate-900">52 pieds (15.85m)</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-sm text-slate-500 mb-1 flex items-center gap-2"><i class="fa-solid fa-expand text-brand/70"></i> Couverture Effective</span>
+                            <span class="font-semibold text-slate-900">50 pieds (15.24m)</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-sm text-slate-500 mb-1 flex items-center gap-2"><i class="fa-solid fa-shield text-brand/70"></i> Certification</span>
+                            <span class="font-semibold text-slate-900">NFPA Compliant</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-sm text-slate-500 mb-1 flex items-center gap-2"><i class="fa-solid fa-layer-group text-brand/70"></i> Matériau</span>
+                            <span class="font-semibold text-slate-900">PVC Souple</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-brand/5 border-l-4 border-brand p-5 rounded-r-xl mb-8">
+                        <h4 class="font-bold text-brand mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-microscope"></i> Conception Intelligente
+                        </h4>
+                        <p class="text-sm text-slate-700">
+                            Une des deux extrémités possède une section plus large spécialement conçue pour recouvrir les raccords de boyaux ainsi que la gaine protectrice suivante. Zéro point de friction. Zéro couture extérieure.
+                        </p>
+                    </div>
+
+                    <div class="mb-10">
+                        <h3 class="text-lg font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2">Applications Principales</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3">
+                                <div class="mt-1 w-5 h-5 rounded bg-brand/10 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-check text-brand text-xs"></i></div>
+                                <span class="text-slate-600">Pompes d'uréthane et membrane liquide</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="mt-1 w-5 h-5 rounded bg-brand/10 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-check text-brand text-xs"></i></div>
+                                <span class="text-slate-600">Environnements extrêmes de chantiers de construction</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="mt-1 w-5 h-5 rounded bg-brand/10 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-check text-brand text-xs"></i></div>
+                                <span class="text-slate-600">Protection industrielle générale sur commande</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="flex flex-col gap-4">
+                        <button class="w-full bg-brand text-white py-4 rounded-xl font-bold text-lg hover:bg-brandDark transition-all shadow-lg shadow-brand/20 hover:-translate-y-0.5 flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-cart-shopping"></i> Ajouter au panier
+                        </button>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <a href="#contact" class="flex items-center justify-center gap-2 border border-slate-300 bg-white text-slate-700 py-3 rounded-xl font-semibold hover:bg-slate-50 transition-colors">
+                                <i class="fa-solid fa-calculator text-slate-400"></i> Devis de gros
+                            </a>
+                            <a href="#" class="flex items-center justify-center gap-2 border border-slate-300 bg-white text-slate-700 py-3 rounded-xl font-semibold hover:bg-slate-50 transition-colors group">
+                                <i class="fa-solid fa-download text-brand group-hover:scale-110 transition-transform"></i> Fiche (.docx)
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+<section id="equipe" class="py-24 bg-slate-50 relative overflow-hidden">
+        
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-brand/5 rounded-l-full blur-3xl transform translate-x-1/3 -translate-y-1/4"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="max-w-3xl mb-16 opacity-0 animate-fade-up">
+                <span class="text-brand font-bold tracking-wider uppercase text-sm mb-4 block flex items-center gap-2">
+                    <i class="fa-solid fa-flask text-brand"></i> Notre Expertise
+                </span>
+                <h2 class="text-3xl md:text-5xl font-bold text-slate-900 leading-tight mb-6">
+                    Spécialisés en <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand to-blue-400">R&D</span> d'équipements de protection.
+                </h2>
+                <p class="text-lg text-slate-600 leading-relaxed">
+                    Derrière la Gaine 20618 se trouve une équipe de spécialistes passionnés. Nous concevons, testons et éprouvons nos solutions pour garantir une sécurité sans compromis dans les environnements les plus exigeants.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg shadow-slate-200/50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 opacity-0 animate-fade-up" style="animation-delay: 0.2s;">
+                    <div class="w-14 h-14 bg-blue-50 text-brand rounded-xl flex items-center justify-center text-2xl mb-6 shadow-inner">
+                        <i class="fa-regular fa-handshake"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Service Client Dévoué</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Nos clients sont la raison d'être de notre entreprise. Notre personnel prend le temps de comprendre vos besoins individuels, industriels ou de distribution, pour vous offrir un service irréprochable et bâtir des relations durables.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg shadow-slate-200/50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 opacity-0 animate-fade-up" style="animation-delay: 0.4s;">
+                    <div class="w-14 h-14 bg-blue-50 text-brand rounded-xl flex items-center justify-center text-2xl mb-6 shadow-inner">
+                        <i class="fa-solid fa-helmet-safety"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Experts de l'Industrie</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Vous êtes entre de bonnes mains. Nous recrutons et formons des spécialistes exceptionnels, maîtrisant parfaitement les normes de sécurité (NFPA) et les réalités des chantiers et usines d'aujourd'hui.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg shadow-slate-200/50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 opacity-0 animate-fade-up" style="animation-delay: 0.6s;">
+                    <div class="w-14 h-14 bg-blue-50 text-brand rounded-xl flex items-center justify-center text-2xl mb-6 shadow-inner">
+                        <i class="fa-solid fa-medal"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Qualité Supérieure</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Nous croyons fermement à la nécessité de "bien faire notre travail". Nos services et conceptions reposent sur des méthodes éprouvées, garantissant une qualité de protection sans équivalent sur le marché.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="bg-primary rounded-3xl overflow-hidden shadow-2xl opacity-0 animate-fade-up" style="animation-delay: 0.8s;">
+                <div class="flex flex-col lg:flex-row">
+                    <div class="lg:w-1/2 min-h-[400px] relative">
+                         <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Ingénieur en laboratoire" class="absolute inset-0 w-full h-full object-cover opacity-90 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700">
+                         <div class="absolute inset-0 bg-gradient-to-r from-transparent to-primary lg:bg-gradient-to-t lg:from-primary lg:to-transparent opacity-60"></div>
+                    </div>
+                    
+                    <div class="lg:w-1/2 p-10 lg:p-16 flex flex-col justify-center bg-primary relative">
+                        <i class="fa-solid fa-quote-right absolute top-10 right-10 text-6xl text-white/5"></i>
+                        
+                        <h3 class="text-3xl font-bold text-white mb-4">Travailler avec nous vous intéresse ?</h3>
+                        <p class="text-slate-300 mb-8 text-lg leading-relaxed">
+                            Il n'y a pas de meilleur moment pour commencer. Que vous ayez besoin d'équiper votre flotte, de concevoir une protection sur mesure, ou de devenir distributeur de la Gaine 20618.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4 mt-auto">
+                            <a href="#contact" class="inline-flex justify-center items-center gap-2 bg-brand text-white font-semibold py-3 px-6 rounded-lg hover:bg-brandLight hover:text-brand transition-all duration-300 shadow-lg hover:-translate-y-0.5">
+                                Parler à un expert <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                            <a href="tel:8196796324" class="inline-flex justify-center items-center gap-2 bg-white/10 text-white border border-white/20 font-semibold py-3 px-6 rounded-lg hover:bg-white/20 transition-all duration-300">
+                                <i class="fa-solid fa-phone"></i> 819-679-6324
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+<section id="contact" class="py-24 bg-primary relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-0 -left-1/4 w-1/2 h-full bg-gradient-to-r from-brand/30 to-transparent blur-3xl transform -skew-x-12"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 opacity-0 animate-fade-up">
+                <span class="text-blue-400 font-bold tracking-wider uppercase text-sm mb-4 block">Passez à l'action</span>
+                <h2 class="text-3xl md:text-5xl font-bold text-white leading-tight mb-6">
+                    Prêt à <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-brand">sécuriser</span> vos installations ?
+                </h2>
+                <p class="text-lg text-slate-300">
+                    Demandez une soumission de gros, posez vos questions techniques ou rejoignez notre réseau de distributeurs. Notre équipe de Sherbrooke est prête à vous répondre.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start bg-white/5 border border-white/10 rounded-3xl p-6 md:p-10 backdrop-blur-md opacity-0 animate-fade-up" style="animation-delay: 0.2s;">
+                
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Contactez notre équipe</h3>
+                        <p class="text-slate-400 text-sm">Nous répondons généralement dans un délai de 24 heures ouvrables.</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <a href="tel:8196796324" class="flex items-start gap-4 p-4 rounded-2xl hover:bg-white/5 transition-colors group">
+                            <div class="w-12 h-12 bg-brand/20 text-brand rounded-xl flex items-center justify-center text-xl flex-shrink-0 group-hover:bg-brand group-hover:text-white transition-all">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold">Téléphone</h4>
+                                <p class="text-brand font-medium text-lg mt-1">819-679-6324</p>
+                            </div>
+                        </a>
+
+                        <a href="mailto:info@2meprotection.com" class="flex items-start gap-4 p-4 rounded-2xl hover:bg-white/5 transition-colors group">
+                            <div class="w-12 h-12 bg-brand/20 text-brand rounded-xl flex items-center justify-center text-xl flex-shrink-0 group-hover:bg-brand group-hover:text-white transition-all">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold">Courriel</h4>
+                                <p class="text-slate-300 mt-1">info@2meprotection.com</p>
+                            </div>
+                        </a>
+
+                        <div class="flex items-start gap-4 p-4 rounded-2xl">
+                            <div class="w-12 h-12 bg-brand/20 text-brand rounded-xl flex items-center justify-center text-xl flex-shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold">Siège Social & Entrepôt</h4>
+                                <p class="text-slate-300 mt-1 leading-relaxed">
+                                    82a, chemin Dion<br>
+                                    Sherbrooke (Qc) Canada<br>
+                                    J1R 0R8
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-primary/50 border border-white/10 rounded-2xl p-5 mt-8">
+                        <h4 class="text-white font-semibold mb-3 flex items-center gap-2">
+                            <i class="fa-regular fa-clock text-brand"></i> Heures d'ouverture
+                        </h4>
+                        <div class="flex justify-between text-sm text-slate-400 border-b border-white/10 pb-2 mb-2">
+                            <span>Lundi - Vendredi</span>
+                            <span class="text-white font-medium">9h00 - 17h00</span>
+                        </div>
+                        <div class="flex justify-between text-sm text-slate-400">
+                            <span>Samedi - Dimanche</span>
+                            <span class="text-brand font-medium">Fermé</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 bg-slate-900 rounded-2xl p-6 sm:p-8 shadow-2xl border border-white/5 relative">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-brand rounded-bl-full opacity-20"></div>
+
+                    <form action="https://formspree.io/f/xojpnwzl" method="POST" class="space-y-5 relative z-10">
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div class="space-y-1.5">
+                                <label for="name" class="text-sm font-medium text-slate-300">Nom complet <span class="text-brand">*</span></label>
+                                <input type="text" name="name" id="name" required placeholder="Jean Tremblay" 
+                                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all">
+                            </div>
+                            <div class="space-y-1.5">
+                                <label for="company" class="text-sm font-medium text-slate-300">Nom de l'entreprise</label>
+                                <input type="text" name="company" id="company" placeholder="Industries XYZ inc." 
+                                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div class="space-y-1.5">
+                                <label for="email" class="text-sm font-medium text-slate-300">Courriel professionnel <span class="text-brand">*</span></label>
+                                <input type="email" name="email" id="email" required placeholder="jean@entreprise.com" 
+                                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all">
+                            </div>
+                            <div class="space-y-1.5">
+                                <label for="phone" class="text-sm font-medium text-slate-300">Téléphone</label>
+                                <input type="tel" name="phone" id="phone" placeholder="(555) 123-4567" 
+                                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all">
+                            </div>
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label for="subject" class="text-sm font-medium text-slate-300">Sujet de votre demande</label>
+                            <div class="relative">
+                                <select name="subject" id="subject" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white appearance-none focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all cursor-pointer">
+                                    <option value="Demande de devis" class="bg-slate-800 text-white">Demande de devis / Volume</option>
+                                    <option value="Devenir distributeur" class="bg-slate-800 text-white">Devenir distributeur</option>
+                                    <option value="Information produit" class="bg-slate-800 text-white">Information sur la Gaine 20618</option>
+                                    <option value="Autre" class="bg-slate-800 text-white">Autre demande</option>
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-400">
+                                    <i class="fa-solid fa-chevron-down text-sm"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label for="message" class="text-sm font-medium text-slate-300">Votre message <span class="text-brand">*</span></label>
+                            <textarea name="message" id="message" rows="4" required placeholder="Comment pouvons-nous vous aider ?" 
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all resize-none"></textarea>
+                        </div>
+
+                        <input type="hidden" name="_next" value="http://www.2meprotection.com/">
+                        <input type="text" name="_gotcha" style="display:none">
+
+                        <button type="submit" class="w-full bg-brand text-white font-bold py-4 rounded-xl hover:bg-brandLight hover:text-brand transition-all duration-300 shadow-lg shadow-brand/20 hover:-translate-y-0.5 flex justify-center items-center gap-2 group mt-4">
+                            <span>Envoyer la demande</span>
+                            <i class="fa-solid fa-paper-plane group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                        </button>
+                        
+                        <p class="text-center text-xs text-slate-500 mt-4 flex items-center justify-center gap-1.5">
+                            <i class="fa-solid fa-lock text-slate-600"></i> Vos informations sont sécurisées et confidentielles.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#0a0f1c] text-slate-400 py-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <div class="w-6 h-6 bg-brand text-white flex items-center justify-center rounded text-xs font-bold">2ME</div>
+                <span class="font-bold text-white tracking-tight">Protection</span>
+            </div>
+            <p class="text-sm">&copy; <span id="year"></span> 2ME Protection. Tous droits réservés.</p>
+            <div class="flex gap-4 text-sm">
+                <a href="#" class="hover:text-white transition-colors">Politique de confidentialité</a>
+                <a href="#" class="hover:text-white transition-colors">Termes</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Element is in view, add the animation class
+                        entry.target.classList.add('animate-fade-up');
+                        // Remove opacity-0 so it stays visible
+                        entry.target.style.opacity = '1';
+                        // Stop observing once animated
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Select all elements that have opacity-0 and animate-fade-up
+            const animatedElements = document.querySelectorAll('.opacity-0.animate-fade-up');
+            
+            // Temporarily remove the animation class until they scroll into view
+            animatedElements.forEach(el => {
+                el.classList.remove('animate-fade-up');
+                observer.observe(el);
+            });
+        });
+    </script>
+    <script>
+        // Smooth Scroll Navbar logic
+        const navbar = document.getElementById('navbar');
+        const brandText = document.getElementById('nav-brand-text');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                // Scrolled State
+                navbar.classList.add('nav-scrolled');
+                navbar.classList.remove('nav-transparent');
+                
+                // Change text colors to dark
+                brandText.classList.remove('nav-text-light');
+                brandText.classList.add('nav-text-dark');
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('nav-text-light');
+                    link.classList.add('text-gray-600'); // Tailwind class
+                });
+
+                mobileMenuBtn.classList.remove('nav-text-light');
+                mobileMenuBtn.classList.add('text-gray-900');
+
+            } else {
+                // Transparent Top State
+                navbar.classList.add('nav-transparent');
+                navbar.classList.remove('nav-scrolled');
+                
+                // Change text colors back to light
+                brandText.classList.add('nav-text-light');
+                brandText.classList.remove('nav-text-dark');
+                
+                navLinks.forEach(link => {
+                    link.classList.add('nav-text-light');
+                    link.classList.remove('text-gray-600');
+                });
+
+                mobileMenuBtn.classList.add('nav-text-light');
+                mobileMenuBtn.classList.remove('text-gray-900');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const menu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
