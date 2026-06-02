@@ -1,0 +1,48 @@
+.lang-toggle {
+    display: flex;
+    align-items: center;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.lang-toggle a {
+    padding: 0.4rem 0.65rem;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.lang-toggle a.lang-active {
+    background-color: #00569d;
+    color: #fff;
+}
+
+.nav-transparent .lang-toggle {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.nav-transparent .lang-toggle a:not(.lang-active) {
+    color: #f8fafc;
+    opacity: 0.85;
+}
+
+.nav-transparent .lang-toggle a:not(.lang-active):hover {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-scrolled .lang-toggle,
+#navbar:not(.nav-transparent) .lang-toggle {
+    border: 1px solid #e2e8f0;
+}
+
+.nav-scrolled .lang-toggle a:not(.lang-active),
+#navbar:not(.nav-transparent) .lang-toggle a:not(.lang-active) {
+    color: #475569;
+}
+
+.nav-scrolled .lang-toggle a:not(.lang-active):hover,
+#navbar:not(.nav-transparent) .lang-toggle a:not(.lang-active):hover {
+    background-color: #f1f5f9;
+}
