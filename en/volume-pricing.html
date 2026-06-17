@@ -164,8 +164,8 @@
                         <a href="tel:8196796324" class="flex items-center gap-2 text-brand font-semibold hover:text-brandDark transition-colors">
                             <i class="fa-solid fa-phone"></i> 819-679-6324
                         </a>
-                        <a href="mailto:info@2meprotection.com" class="flex items-center gap-2 text-brand font-medium text-sm mt-2 hover:text-brandDark transition-colors">
-                            <i class="fa-solid fa-envelope"></i> info@2meprotection.com
+                        <a href="mailto:mpouliot@2meprotection.com" class="flex items-center gap-2 text-brand font-medium text-sm mt-2 hover:text-brandDark transition-colors">
+                            <i class="fa-solid fa-envelope"></i> mpouliot@2meprotection.com
                         </a>
                     </div>
 
@@ -202,7 +202,7 @@
                                         class="w-full border border-slate-300 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all">
                                 </div>
                                 <div class="space-y-1.5">
-                                    <label for="title" class="text-sm font-medium text-slate-700">Job title</label>
+                                    <label for="title" class="text-sm font-medium text-slate-700">Specify your title</label>
                                     <input type="text" name="title" id="title" placeholder="Purchasing Director"
                                         class="w-full border border-slate-300 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all">
                                 </div>
@@ -234,8 +234,13 @@
                                 </div>
                                 <div class="space-y-1.5">
                                     <label for="quantity" class="text-sm font-medium text-slate-700">Estimated quantity (units) <span class="text-brand">*</span></label>
-                                    <input type="number" name="quantity" id="quantity" required min="1" placeholder="e.g. 25"
-                                        class="w-full border border-slate-300 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all">
+                                    <select name="quantity" id="quantity" required class="w-full border border-slate-300 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all cursor-pointer">
+                                        <option value="" disabled selected>Select a quantity</option>
+                                        <option value="10">10</option>
+                                        <option value="20">20</option>
+                                        <option value="30">30</option>
+                                        <option value="More than 30">More than 30</option>
+                                    </select>
                                 </div>
                                 <div class="space-y-1.5">
                                     <label for="frequency" class="text-sm font-medium text-slate-700">Order frequency</label>
@@ -262,6 +267,50 @@
                         <fieldset>
                             <legend class="text-lg font-bold text-slate-900 mb-5 flex items-center gap-2 pb-2 border-b border-slate-200 w-full">
                                 <span class="w-8 h-8 rounded-lg bg-brand/10 text-brand flex items-center justify-center text-sm font-bold">3</span>
+                                Application & requirements
+                            </legend>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div class="space-y-1.5">
+                                    <label for="application" class="text-sm font-medium text-slate-700">Application</label>
+                                    <input type="text" name="application" id="application" placeholder="e.g. Urethane pump, job site"
+                                        class="w-full border border-slate-300 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all">
+                                </div>
+                                <div class="space-y-1.5">
+                                    <label for="domaine" class="text-sm font-medium text-slate-700">Sector</label>
+                                    <input type="text" name="domaine" id="domaine" placeholder="e.g. Construction, industrial"
+                                        class="w-full border border-slate-300 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all">
+                                </div>
+                                <div class="space-y-1.5 sm:col-span-2">
+                                    <label for="marque_pompe" class="text-sm font-medium text-slate-700">Urethane pump brand?</label>
+                                    <input type="text" name="marque_pompe" id="marque_pompe" placeholder="e.g. Graco, Wagner"
+                                        class="w-full border border-slate-300 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all">
+                                </div>
+                                <div class="space-y-1.5 sm:col-span-2">
+                                    <label for="region" class="text-sm font-medium text-slate-700">Location in Canada, region</label>
+                                    <input type="text" name="region" id="region" placeholder="e.g. Estrie, Quebec"
+                                        class="w-full border border-slate-300 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all">
+                                </div>
+                                <div class="space-y-1.5">
+                                    <label for="nombre_equipements" class="text-sm font-medium text-slate-700">Number of pieces of equipment?</label>
+                                    <input type="number" name="nombre_equipements" id="nombre_equipements" min="1" placeholder="e.g. 4"
+                                        class="w-full border border-slate-300 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all">
+                                </div>
+                                <div class="space-y-1.5">
+                                    <label for="diametre" class="text-sm font-medium text-slate-700">Diameter required?</label>
+                                    <input type="text" name="diametre" id="diametre" placeholder="e.g. 2 in"
+                                        class="w-full border border-slate-300 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all">
+                                </div>
+                                <div class="space-y-1.5 sm:col-span-2">
+                                    <label for="longueur" class="text-sm font-medium text-slate-700">Length?</label>
+                                    <input type="text" name="longueur" id="longueur" placeholder="e.g. 50 ft"
+                                        class="w-full border border-slate-300 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all">
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend class="text-lg font-bold text-slate-900 mb-5 flex items-center gap-2 pb-2 border-b border-slate-200 w-full">
+                                <span class="w-8 h-8 rounded-lg bg-brand/10 text-brand flex items-center justify-center text-sm font-bold">4</span>
                                 Delivery & notes
                             </legend>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
