@@ -6,8 +6,30 @@
 
     var ROUTES = {
         home: { fr: 'index.html', en: 'en/index.html' },
-        applications: { fr: 'applications.html', en: 'en/applications.html' },
-        volume: { fr: 'tarifs-au-volume.html', en: 'en/volume-pricing.html' }
+        isolation: { fr: 'gaine-isolation.html', en: 'en/insulation-sleeve.html' },
+        custom: { fr: 'gaine-sur-mesure.html', en: 'en/custom-sleeves.html' },
+        about: { fr: 'a-propos.html', en: 'en/about.html' },
+        contact: { fr: 'contact.html', en: 'en/contact.html' },
+        quote: { fr: 'demande-soumission.html', en: 'en/quote.html' },
+        estimate: { fr: 'demande-devis.html', en: 'en/estimate.html' }
+    };
+
+    var SLUGS = {
+        'index.html': 'home',
+        'gaine-isolation.html': 'isolation',
+        'insulation-sleeve.html': 'isolation',
+        'gaine-sur-mesure.html': 'custom',
+        'custom-sleeves.html': 'custom',
+        'a-propos.html': 'about',
+        'about.html': 'about',
+        'contact.html': 'contact',
+        'demande-soumission.html': 'quote',
+        'quote.html': 'quote',
+        'demande-devis.html': 'estimate',
+        'estimate.html': 'estimate',
+        'applications.html': 'isolation',
+        'tarifs-au-volume.html': 'quote',
+        'volume-pricing.html': 'quote'
     };
 
     function inEnDir() {
@@ -20,9 +42,7 @@
 
     function getSlug() {
         var name = window.location.pathname.split('/').pop() || 'index.html';
-        if (name === 'tarifs-au-volume.html' || name === 'volume-pricing.html') return 'volume';
-        if (name === 'applications.html') return 'applications';
-        return 'home';
+        return SLUGS[name] || 'home';
     }
 
     function routeUrl(lang) {

@@ -1,0 +1,67 @@
+/* Quiet background atmosphere. Transform only. */
+.atmosphere {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.atmosphere span {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(28px);
+}
+
+.atmosphere .orb-a {
+    width: 34rem;
+    height: 34rem;
+    top: -8rem;
+    right: -6rem;
+    background: radial-gradient(circle, rgba(0, 86, 157, 0.16) 0%, rgba(0, 86, 157, 0) 68%);
+    animation: drift 32s ease-in-out infinite;
+}
+
+.atmosphere .orb-b {
+    width: 26rem;
+    height: 26rem;
+    bottom: 8%;
+    left: -8rem;
+    background: radial-gradient(circle, rgba(224, 242, 254, 0.95) 0%, rgba(224, 242, 254, 0) 70%);
+    animation: drift 38s ease-in-out infinite reverse;
+}
+
+@keyframes drift {
+    0%, 100% { transform: translate3d(0, 0, 0); }
+    50% { transform: translate3d(-32px, 20px, 0); }
+}
+
+.js [data-anim] {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.js [data-anim].is-in {
+    animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: var(--d, 0s);
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .atmosphere span {
+        animation: none;
+    }
+
+    .js [data-anim],
+    .js [data-anim].is-in {
+        opacity: 1;
+        transform: none;
+        animation: none;
+    }
+}
