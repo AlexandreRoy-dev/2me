@@ -25,19 +25,4 @@
         radio.addEventListener('change', syncCustomFields);
     });
     syncCustomFields();
-
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    var nodes = document.querySelectorAll('[data-anim]');
-    if (!('IntersectionObserver' in window)) {
-        nodes.forEach(function (node) { node.classList.add('is-in'); });
-        return;
-    }
-    var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-            if (!entry.isIntersecting) return;
-            entry.target.classList.add('is-in');
-            observer.unobserve(entry.target);
-        });
-    }, { threshold: 0.2 });
-    nodes.forEach(function (node) { observer.observe(node); });
 })();

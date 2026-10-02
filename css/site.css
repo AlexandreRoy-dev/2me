@@ -1,3 +1,7 @@
+body {
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
 /* Quiet background atmosphere. Transform only. */
 .atmosphere {
     position: fixed;
@@ -36,32 +40,49 @@
     50% { transform: translate3d(-32px, 20px, 0); }
 }
 
-.js [data-anim] {
-    opacity: 0;
-    transform: translateY(30px);
+/* Brand colours in plain CSS. The Tailwind CDN does not keep custom
+   colours from a config file loaded before it, which left white type
+   on a blank background. */
+.bg-primary { background-color: #0f172a !important; }
+.bg-brand { background-color: #00569d !important; }
+.bg-brandDark { background-color: #003f75 !important; }
+.bg-brandLight { background-color: #e0f2fe !important; }
+.text-brand { color: #00569d !important; }
+.text-brandDark { color: #003f75 !important; }
+.border-brand { border-color: #00569d !important; }
+.accent-brand { accent-color: #00569d; }
+
+.hover\:bg-brand:hover { background-color: #00569d !important; }
+.hover\:bg-brandDark:hover { background-color: #003f75 !important; }
+.hover\:text-brand:hover { color: #00569d !important; }
+.hover\:text-brandDark:hover { color: #003f75 !important; }
+.hover\:text-white:hover { color: #ffffff !important; }
+.hover\:border-brand:hover { border-color: #00569d !important; }
+
+a[aria-current="page"] {
+    background-color: #00569d !important;
+    border-color: #00569d !important;
+    color: #ffffff !important;
 }
 
-.js [data-anim].is-in {
-    animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    animation-delay: var(--d, 0s);
+.bg-primary,
+.bg-primary h1,
+.bg-primary h2,
+.bg-primary p {
+    color: #ffffff;
 }
 
-@keyframes fadeUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+[data-anim] {
+    opacity: 1;
+    transform: none;
+    animation: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .atmosphere span {
+    .atmosphere span,
+    [data-anim] {
         animation: none;
-    }
-
-    .js [data-anim],
-    .js [data-anim].is-in {
         opacity: 1;
         transform: none;
-        animation: none;
     }
 }
