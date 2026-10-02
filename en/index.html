@@ -1,774 +1,122 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en-CA" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2ME Protection | Industrial Protective Sleeve</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#0f172a', // Even darker slate for a more premium contrast
-                        brand: '#00569d', 
-                        brandDark: '#003f75', 
-                        brandLight: '#e0f2fe',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'sans-serif'],
-                    },
-                    animation: {
-                        'fade-up': 'fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                    },
-                    keyframes: {
-                        fadeUp: {
-                            '0%': { opacity: '0', transform: 'translateY(30px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="alternate" hreflang="fr" href="../index.html">
-    <link rel="alternate" hreflang="en" href="index.html">
-    <link rel="stylesheet" href="../js/lang-toggle.css">
-    <script src="../js/lang.js"></script>
-
-    <style>
-        /* Premium Glassmorphism & Scroll States */
-        #navbar {
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .nav-scrolled {
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(12px);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
-        }
-        .nav-transparent {
-            background-color: transparent;
-            padding-top: 1.5rem;
-            padding-bottom: 1.5rem;
-        }
-        
-        /* Dynamic text colors for nav based on scroll */
-        .nav-text-light { color: #f8fafc; }
-        .nav-text-dark { color: #1e293b; }
-        
-        /* Subtle glowing background mesh */
-        .hero-glow {
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(0,86,157,0.4) 0%, rgba(0,0,0,0) 70%);
-            top: -100px;
-            right: -100px;
-            border-radius: 50%;
-            filter: blur(60px);
-            z-index: 0;
-            opacity: 0.6;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home | 2ME Protection inc.</title>
+<meta name="description" content="Protective sleeve (scuffguard) designed and manufactured in Canada by 2ME Protection inc. for hoses, cables and wires.">
+<link rel="canonical" href="https://2me.roymarketing.ca/en/">
+<link rel="alternate" hreflang="fr" href="https://2me.roymarketing.ca/">
+<link rel="alternate" hreflang="en" href="https://2me.roymarketing.ca/en/">
+<link rel="alternate" hreflang="x-default" href="https://2me.roymarketing.ca/">
+<meta property="og:title" content="Home | 2ME Protection inc.">
+<meta property="og:description" content="Protective sleeve (scuffguard) designed and manufactured in Canada by 2ME Protection inc. for hoses, cables and wires.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://2me.roymarketing.ca/en/">
+<meta property="og:image" content="https://2me.roymarketing.ca/images/gaine-protection.webp">
+<meta property="og:locale" content="en_CA">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="../js/tw-config.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../js/lang-toggle.css">
+<link rel="stylesheet" href="../css/site.css">
+<script>document.documentElement.classList.add('js')</script>
+<script src="../js/lang.js"></script>
 </head>
-<body class="font-sans antialiased text-gray-800 bg-gray-50 flex flex-col min-h-screen">
-
-    <nav id="navbar" class="nav-transparent fixed w-full z-50 transition-all duration-500">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                
-                <a href="index.html" class="flex-shrink-0 flex items-center group">
-                    <img src="../logo.png" alt="2ME Protection Logo" class="h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-300">
-                </a>
-                
-                <div class="hidden md:flex space-x-6 items-center">
-                    <a href="#produit" class="nav-link nav-text-light hover:text-brand font-medium transition-colors duration-300">The Product</a>
-                    <a href="applications.html" class="nav-link nav-text-light hover:text-brand font-medium transition-colors duration-300">Applications</a>
-                    <a href="volume-pricing.html" class="nav-link nav-text-light flex items-center gap-2 hover:text-brand font-medium transition-colors duration-300">
-                        <i class="fa-solid fa-boxes-stacked text-brand"></i> Volume Pricing
-                    </a>
-                    <div class="lang-toggle" role="group" aria-label="Choose language">
-                        <a href="#" data-lang-switch="fr">FR</a>
-                        <a href="#" data-lang-switch="en">EN</a>
-                    </div>
-                    <a href="volume-pricing.html" class="bg-brand text-white px-7 py-2.5 rounded-lg hover:bg-brandDark transition-all shadow-lg shadow-brand/20 hover:shadow-brand/40 hover:-translate-y-0.5 font-semibold">
-                        Get a Quote
-                    </a>
-                </div>
-
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="nav-text-light hover:text-brand focus:outline-none transition-colors duration-300">
-                        <i class="fa-solid fa-bars text-2xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-        <div id="mobile-menu" class="hidden md:hidden absolute w-full bg-white shadow-xl border-t border-gray-100">
-            <div class="px-4 pt-4 pb-6 space-y-3">
-                <div class="lang-toggle mb-2 w-fit" role="group" aria-label="Choose language">
-                    <a href="#" data-lang-switch="fr">FR</a>
-                    <a href="#" data-lang-switch="en">EN</a>
-                </div>
-                <a href="#produit" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand hover:bg-slate-50 rounded-md">The Product</a>
-                <a href="applications.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand hover:bg-slate-50 rounded-md">Applications</a>
-                <a href="volume-pricing.html" class="block px-3 py-2 text-base font-medium text-brand bg-brand/5 rounded-md"><i class="fa-solid fa-boxes-stacked mr-2"></i> Volume Pricing</a>
-                <a href="volume-pricing.html" class="block px-3 py-2 text-base font-medium text-white bg-brand text-center rounded-md mt-4">Get a Quote</a>
-            </div>
-        </div>
-    </nav>
-
-    <section id="accueil" class="relative min-h-[95vh] flex items-center pt-20 overflow-hidden bg-primary">
-        
-        <div class="absolute inset-0 z-0">
-            <img src="../gaine1.jpeg" alt="Industrial Background" class="w-full h-full object-cover opacity-20 mix-blend-overlay">
-            <div class="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-[#002f56]/90"></div>
-            <div class="hero-glow animate-pulse-slow"></div>
-        </div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid lg:grid-cols-2 gap-12 items-center">
-            
-            <div class="pr-lg-8 pt-10">
-                <div class="opacity-0 animate-fade-up" style="animation-delay: 0.1s;">
-                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-400/30 bg-blue-900/40 backdrop-blur-md mb-8">
-                        <span class="relative flex h-3 w-3">
-                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
-                        </span>
-                        <span class="text-blue-100 text-sm font-medium tracking-wide">Proudly designed and manufactured in Canada</span>
-                        <i class="fa-brands fa-canadian-maple-leaf text-red-400 ml-1"></i>
-                    </div>
-                </div>
-
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6 text-white opacity-0 animate-fade-up" style="animation-delay: 0.3s;">
-                    Innovative <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-brand">protective sleeves</span> for your hose and wire assemblies.
-                </h1>
-                
-                <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-xl opacity-0 animate-fade-up leading-relaxed" style="animation-delay: 0.5s;">
-                    The 20618 Sleeve is the leading <strong>hose sleeve</strong> (<em>scuffguard</em>) with a re-openable design. Made from flexible PVC, it secures your installations even in the harshest industrial environments.
-                </p>
-                
-                <div class="flex flex-col sm:flex-row gap-5 opacity-0 animate-fade-up" style="animation-delay: 0.7s;">
-                    <a href="#contact" class="flex items-center justify-center gap-3 bg-brand text-white px-8 py-4 rounded-xl font-semibold hover:bg-brandLight hover:text-brand transition-all duration-300 shadow-lg shadow-brand/30 hover:-translate-y-1">
-                        Equip my business <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                    <a href="volume-pricing.html" class="flex items-center justify-center gap-3 bg-white/5 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition-all duration-300 hover:-translate-y-1">
-                        Volume Pricing <i class="fa-solid fa-boxes-stacked"></i>
-                    </a>
-                </div>
-                
-                <div class="mt-12 flex items-center gap-6 opacity-0 animate-fade-up" style="animation-delay: 0.9s;">
-                    <div class="flex items-center gap-2 text-slate-400 text-sm font-medium">
-                        <i class="fa-solid fa-check-circle text-brand"></i> NFPA Compliant
-                    </div>
-                    <div class="flex items-center gap-2 text-slate-400 text-sm font-medium">
-                        <i class="fa-solid fa-check-circle text-brand"></i> Seamless
-                    </div>
-                    <div class="flex items-center gap-2 text-slate-400 text-sm font-medium">
-                        <i class="fa-solid fa-check-circle text-brand"></i> B2B and Bulk
-                    </div>
-                </div>
-            </div>
-
-            <div class="hidden lg:block relative h-[600px] opacity-0 animate-fade-up" style="animation-delay: 0.6s;">
-                <div class="absolute inset-0 flex items-center justify-center animate-float">
-                    <div class="relative w-4/5 h-4/5">
-                        <div class="absolute inset-0 border border-brand/30 rounded-3xl transform rotate-3"></div>
-                        <div class="absolute inset-0 bg-gradient-to-tr from-brand/20 to-transparent rounded-3xl backdrop-blur-sm border border-white/10 shadow-2xl overflow-hidden">
-                            <img src="../gaine2.png" alt="Protective Sleeve 20618" class="w-full h-full object-cover mix-blend-overlay opacity-80">
-                            
-                            <div class="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-5 shadow-2xl">
-                                <div class="flex items-center justify-between">
-                                    <div>
-                                        <p class="text-white font-bold text-lg">Model 20618</p>
-                                        <p class="text-blue-200 text-sm">Re-openable Flexible PVC</p>
-                                    </div>
-                                    <div class="h-10 w-10 rounded-full bg-brand flex items-center justify-center text-white shadow-lg shadow-brand/40">
-                                        <i class="fa-solid fa-shield-halved"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </section>
-
-    <section id="produit" class="py-24 bg-white relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-                
-                <div class="lg:col-span-7 lg:sticky lg:top-32 z-10">
-                    <div class="group relative rounded-3xl overflow-hidden bg-gray-100 aspect-w-4 aspect-h-3 shadow-2xl ring-1 ring-gray-900/5">
-                        <img src="../gainecarroussel.png" alt="Protective Sleeve 20618" class="object-cover w-full h-full transform transition-transform duration-700 group-hover:scale-105">
-                        
-                        <div class="absolute top-6 left-6 flex flex-col gap-2">
-                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 backdrop-blur-sm text-xs font-bold text-brand shadow-sm border border-gray-200 uppercase tracking-wider">
-                                <i class="fa-solid fa-star"></i> Featured Product
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-3 gap-4 mt-4">
-                        <div class="rounded-xl overflow-hidden bg-gray-100 aspect-w-1 aspect-h-1 ring-1 ring-gray-900/5 cursor-pointer hover:opacity-80 transition-opacity">
-                            <img src="../gaine1.jpeg" alt="Seamless detail" class="object-cover w-full h-full">
-                        </div>
-                        <div class="rounded-xl overflow-hidden bg-gray-100 aspect-w-1 aspect-h-1 ring-1 ring-gray-900/5 cursor-pointer hover:opacity-80 transition-opacity relative group">
-                            <img src="../joint.jpg" alt="Joint section that connects two hoses together" class="object-cover w-full h-full min-h-[120px]">
-                            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary/90 via-primary/50 to-transparent p-3 pt-8">
-                                <span class="text-white text-xs font-semibold leading-tight">Joint section</span>
-                            </div>
-                        </div>
-                        <a href="../fiche%20signaletique.pdf" download="fiche-signaletique.pdf" class="rounded-xl overflow-hidden bg-gray-900 p-4 ring-1 ring-gray-900/5 flex flex-col justify-center items-center text-center cursor-pointer hover:bg-gray-800 transition-colors">
-                            <i class="fa-solid fa-file-pdf text-3xl text-red-400 mb-2"></i>
-                            <span class="text-white text-xs font-medium">View the product datasheet</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-5 flex flex-col pt-4 lg:pt-0">
-                    
-                    <div class="mb-6">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-sm font-semibold text-slate-400 tracking-widest uppercase">SKU: GAINE-20618</span>
-                            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-green-50 text-green-700 text-xs font-bold border border-green-200">
-                                <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span> In Stock
-                            </span>
-                        </div>
-                        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight mb-4">
-                            Flexible PVC Protective Sleeve (NFPA)
-                        </h2>
-                        <p class="text-lg text-slate-600 leading-relaxed">
-                            Re-openable system with no exterior seam. Enables quick installation on fixed hoses, inspection, upgrades, and replacing worn sleeves without disassembly.
-                        </p>
-                    </div>
-
-                    <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 mb-8">
-                        <div class="flex items-end gap-2 mb-1">
-                            <span class="text-4xl font-bold text-brand">$545.18</span>
-                            <span class="text-slate-500 font-medium mb-1">CAD / unit</span>
-                        </div>
-                        <p class="text-sm text-slate-400 mt-2 flex items-start gap-2">
-                            <i class="fa-solid fa-circle-info mt-0.5"></i>
-                            <span>Retail price before taxes. F.O.B Sherbrooke. Volume pricing available on request.</span>
-                        </p>
-                    </div>
-
-                    <h3 class="text-lg font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2">Technical Specifications</h3>
-                    <div class="grid grid-cols-2 gap-y-4 gap-x-6 mb-8">
-                        <div class="flex flex-col">
-                            <span class="text-sm text-slate-500 mb-1 flex items-center gap-2"><i class="fa-solid fa-ruler-horizontal text-brand/70"></i> Total Length</span>
-                            <span class="font-semibold text-slate-900">52 ft (15.85 m)</span>
-                        </div>
-                        <div class="flex flex-col">
-                            <span class="text-sm text-slate-500 mb-1 flex items-center gap-2"><i class="fa-solid fa-expand text-brand/70"></i> Effective Coverage</span>
-                            <span class="font-semibold text-slate-900">50 ft (15.24 m)</span>
-                        </div>
-                        <div class="flex flex-col">
-                            <span class="text-sm text-slate-500 mb-1 flex items-center gap-2"><i class="fa-solid fa-shield text-brand/70"></i> Certification</span>
-                            <span class="font-semibold text-slate-900">NFPA Compliant</span>
-                        </div>
-                        <div class="flex flex-col">
-                            <span class="text-sm text-slate-500 mb-1 flex items-center gap-2"><i class="fa-solid fa-layer-group text-brand/70"></i> Material</span>
-                            <span class="font-semibold text-slate-900">Flexible PVC</span>
-                        </div>
-                    </div>
-
-                    <div class="bg-brand/5 border-l-4 border-brand p-5 rounded-r-xl mb-8">
-                        <h4 class="font-bold text-brand mb-2 flex items-center gap-2">
-                            <i class="fa-solid fa-microscope"></i> Smart Design
-                        </h4>
-                        <p class="text-sm text-slate-700">
-                            One end includes a wider section designed to cover hose fittings and the next protective sleeve. Zero friction points. Zero exterior seams.
-                        </p>
-                    </div>
-
-                    <div class="mb-10">
-                        <h3 class="text-lg font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2">Primary Applications</h3>
-                        <ul class="space-y-3">
-                            <li class="flex items-start gap-3">
-                                <div class="mt-1 w-5 h-5 rounded bg-brand/10 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-check text-brand text-xs"></i></div>
-                                <span class="text-slate-600">Urethane and liquid membrane pumps</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <div class="mt-1 w-5 h-5 rounded bg-brand/10 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-check text-brand text-xs"></i></div>
-                                <span class="text-slate-600">Extreme construction site environments</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <div class="mt-1 w-5 h-5 rounded bg-brand/10 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-check text-brand text-xs"></i></div>
-                                <span class="text-slate-600">General industrial protection for work orders</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="flex flex-col gap-4">
-                        <button class="w-full bg-brand text-white py-4 rounded-xl font-bold text-lg hover:bg-brandDark transition-all shadow-lg shadow-brand/20 hover:-translate-y-0.5 flex items-center justify-center gap-3">
-                            <i class="fa-solid fa-cart-shopping"></i> Order
-                        </button>
-                        
-                        <div class="grid grid-cols-2 gap-4">
-                            <a href="volume-pricing.html" class="flex items-center justify-center gap-2 border border-slate-300 bg-white text-slate-700 py-3 rounded-xl font-semibold hover:bg-slate-50 transition-colors">
-                                <i class="fa-solid fa-calculator text-slate-400"></i> Wholesale quote
-                            </a>
-                            <a href="../fiche%20signaletique.pdf" download="fiche-signaletique.pdf" class="flex items-center justify-center gap-2 border border-slate-300 bg-white text-slate-700 py-3 rounded-xl font-semibold hover:bg-slate-50 transition-colors group">
-                                <i class="fa-solid fa-download text-brand group-hover:scale-110 transition-transform"></i> Datasheet (.pdf)
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="innovation" class="py-24 bg-white relative overflow-hidden">
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-brand/5 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
-                <div class="opacity-0 animate-fade-up">
-                    <span class="text-brand font-bold tracking-wider uppercase text-sm mb-4 block flex items-center gap-2">
-                        <i class="fa-solid fa-lightbulb"></i> Innovation
-                    </span>
-                    <h2 class="text-3xl md:text-5xl font-bold text-slate-900 leading-tight mb-6">
-                        Protection reimagined for the <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand to-blue-400">field</span>
-                    </h2>
-                    <p class="text-lg text-slate-600 leading-relaxed mb-8">
-                        The 20618 Sleeve is not just a protective cover. It is the result of continuous innovation: studying real constraints on job sites and in plants, then engineering a solution that installs faster, lasts longer, and adapts without compromise.
-                    </p>
-                    <a href="applications.html" class="inline-flex items-center gap-2 text-brand font-semibold hover:text-brandDark transition-colors">
-                        View applications <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="relative opacity-0 animate-fade-up" style="animation-delay: 0.2s;">
-                    <div class="rounded-3xl overflow-hidden shadow-2xl ring-1 ring-gray-900/5">
-                        <img src="../gaine2.png" alt="20618 Sleeve innovation" class="w-full h-80 object-cover">
-                    </div>
-                    <div class="absolute -bottom-6 -left-6 bg-primary text-white p-5 rounded-2xl shadow-xl max-w-[220px] hidden sm:block">
-                        <p class="text-2xl font-bold text-brand">100%</p>
-                        <p class="text-sm text-slate-300">Designed and made in Canada</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 opacity-0 animate-fade-up" style="animation-delay: 0.2s;">
-                    <div class="w-12 h-12 bg-brand/10 text-brand rounded-xl flex items-center justify-center text-xl mb-4">
-                        <i class="fa-solid fa-rotate"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">Reclosable</h3>
-                    <p class="text-sm text-slate-600 leading-relaxed">Install on hoses already in place. Ideal for replacing worn sleeves, inspection, and upgrades without full disassembly.</p>
-                </div>
-                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 opacity-0 animate-fade-up" style="animation-delay: 0.3s;">
-                    <div class="w-12 h-12 bg-brand/10 text-brand rounded-xl flex items-center justify-center text-xl mb-4">
-                        <i class="fa-solid fa-link"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">Joint section</h3>
-                    <p class="text-sm text-slate-600 leading-relaxed">Connect two hoses in series while keeping fittings fully protected.</p>
-                </div>
-                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 opacity-0 animate-fade-up" style="animation-delay: 0.4s;">
-                    <div class="w-12 h-12 bg-brand/10 text-brand rounded-xl flex items-center justify-center text-xl mb-4">
-                        <i class="fa-solid fa-ban"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">No exterior seam</h3>
-                    <p class="text-sm text-slate-600 leading-relaxed">Zero surface friction points. Less premature wear on exposed areas.</p>
-                </div>
-                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 opacity-0 animate-fade-up" style="animation-delay: 0.5s;">
-                    <div class="w-12 h-12 bg-brand/10 text-brand rounded-xl flex items-center justify-center text-xl mb-4">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">NFPA compliant</h3>
-                    <p class="text-sm text-slate-600 leading-relaxed">Innovation that meets the market's most demanding safety requirements.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="equipe" class="py-24 bg-slate-50 relative overflow-hidden">
-        
-        <div class="absolute top-0 right-0 w-1/2 h-full bg-brand/5 rounded-l-full blur-3xl transform translate-x-1/3 -translate-y-1/4"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            
-            <div class="max-w-3xl mb-16 opacity-0 animate-fade-up">
-                <span class="text-brand font-bold tracking-wider uppercase text-sm mb-4 block flex items-center gap-2">
-                    <i class="fa-solid fa-flask text-brand"></i> Our Expertise
-                </span>
-                <h2 class="text-3xl md:text-5xl font-bold text-slate-900 leading-tight mb-6">
-                    Specialized in <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand to-blue-400">R&amp;D</span> for protective equipment.
-                </h2>
-                <p class="text-lg text-slate-600 leading-relaxed">
-                    Behind the 20618 Sleeve is a team of passionate specialists. We design, test, and validate our solutions to ensure uncompromising safety in the most demanding environments.
-                </p>
-
-                <div class="mt-8 bg-white rounded-2xl shadow-lg shadow-slate-200/50 border border-slate-100 p-6 flex items-start gap-4">
-                    <div class="w-12 h-12 bg-blue-50 text-brand rounded-xl flex items-center justify-center text-xl flex-shrink-0 shadow-inner">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-slate-900 mb-1">On-site visit</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">
-                            We can come to your site to validate the installation, real-world constraints, and ensure the selected solution integrates perfectly with your needs.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-                
-                <div class="bg-white p-8 rounded-2xl shadow-lg shadow-slate-200/50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 opacity-0 animate-fade-up" style="animation-delay: 0.2s;">
-                    <div class="w-14 h-14 bg-blue-50 text-brand rounded-xl flex items-center justify-center text-2xl mb-6 shadow-inner">
-                        <i class="fa-regular fa-handshake"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Dedicated customer service</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Our customers are the reason our company exists. Our team takes the time to understand your specific needs, whether industrial or high-volume orders, to deliver outstanding service and build lasting relationships.
-                    </p>
-                </div>
-
-                <div class="bg-white p-8 rounded-2xl shadow-lg shadow-slate-200/50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 opacity-0 animate-fade-up" style="animation-delay: 0.4s;">
-                    <div class="w-14 h-14 bg-blue-50 text-brand rounded-xl flex items-center justify-center text-2xl mb-6 shadow-inner">
-                        <i class="fa-solid fa-helmet-safety"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Industry experts</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        You are in good hands. We recruit and train exceptional specialists who understand safety standards (NFPA) and the realities of today's job sites and plants.
-                    </p>
-                </div>
-
-                <div class="bg-white p-8 rounded-2xl shadow-lg shadow-slate-200/50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 opacity-0 animate-fade-up" style="animation-delay: 0.6s;">
-                    <div class="w-14 h-14 bg-blue-50 text-brand rounded-xl flex items-center justify-center text-2xl mb-6 shadow-inner">
-                        <i class="fa-solid fa-medal"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Premium quality</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        We strongly believe in doing the job right. Our services and designs rely on proven methods, delivering protection quality that stands out in the market.
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="text-center max-w-3xl mx-auto opacity-0 animate-fade-up" style="animation-delay: 0.8s;">
-                <h3 class="text-3xl font-bold text-slate-900 mb-4">Interested in working with us?</h3>
-                <p class="text-slate-600 mb-8 text-lg leading-relaxed">
-                    There is no better time to get started. Whether you need to equip your fleet, design a custom protection solution, or take advantage of our volume-order benefits.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#contact" class="inline-flex justify-center items-center gap-2 bg-brand text-white font-semibold py-3 px-6 rounded-lg hover:bg-brandDark transition-all duration-300 shadow-lg hover:-translate-y-0.5">
-                        Talk to an expert <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                    <a href="tel:8196796324" class="inline-flex justify-center items-center gap-2 border border-slate-300 bg-white text-slate-700 font-semibold py-3 px-6 rounded-lg hover:bg-slate-50 transition-all duration-300">
-                        <i class="fa-solid fa-phone"></i> 819-679-6324
-                    </a>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="contact" class="py-24 bg-primary relative overflow-hidden">
-        <div class="absolute inset-0 opacity-20">
-            <div class="absolute top-0 -left-1/4 w-1/2 h-full bg-gradient-to-r from-brand/30 to-transparent blur-3xl transform -skew-x-12"></div>
-            <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-        </div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            
-            <div class="text-center max-w-3xl mx-auto mb-16 opacity-0 animate-fade-up">
-                <span class="text-blue-400 font-bold tracking-wider uppercase text-sm mb-4 block">Take action</span>
-                <h2 class="text-3xl md:text-5xl font-bold text-white leading-tight mb-6">
-                    Ready to <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-brand">protect</span> your installations?
-                </h2>
-                <p class="text-lg text-slate-300">
-                    Request a quote for bulk purchases, ask technical questions, or explore our volume pricing. Our Sherbrooke team is ready to help.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start bg-white/5 border border-white/10 rounded-3xl p-6 md:p-10 backdrop-blur-md opacity-0 animate-fade-up" style="animation-delay: 0.2s;">
-                
-                <div class="lg:col-span-5 space-y-8">
-                    <div>
-                        <h3 class="text-2xl font-bold text-white mb-2">Contact our team</h3>
-                        <p class="text-slate-400 text-sm">We typically respond within 24 business hours.</p>
-                    </div>
-
-                    <div class="space-y-6">
-                        <a href="tel:8196796324" class="flex items-start gap-4 p-4 rounded-2xl hover:bg-white/5 transition-colors group">
-                            <div class="w-12 h-12 bg-brand/20 text-brand rounded-xl flex items-center justify-center text-xl flex-shrink-0 group-hover:bg-brand group-hover:text-white transition-all">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-white font-semibold">Phone</h4>
-                                <p class="text-brand font-medium text-lg mt-1">819-679-6324</p>
-                            </div>
-                        </a>
-
-                        <a href="mailto:mpouliot@2meprotection.com" class="flex items-start gap-4 p-4 rounded-2xl hover:bg-white/5 transition-colors group">
-                            <div class="w-12 h-12 bg-brand/20 text-brand rounded-xl flex items-center justify-center text-xl flex-shrink-0 group-hover:bg-brand group-hover:text-white transition-all">
-                                <i class="fa-solid fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-white font-semibold">Email</h4>
-                                <p class="text-slate-300 mt-1">mpouliot@2meprotection.com</p>
-                            </div>
-                        </a>
-
-                        <div class="flex items-start gap-4 p-4 rounded-2xl">
-                            <div class="w-12 h-12 bg-brand/20 text-brand rounded-xl flex items-center justify-center text-xl flex-shrink-0">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-white font-semibold">Head Office and Warehouse</h4>
-                                <p class="text-slate-300 mt-1 leading-relaxed">
-                                    82a, chemin Dion<br>
-                                    Sherbrooke (QC) Canada<br>
-                                    J1R 0R8
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-primary/50 border border-white/10 rounded-2xl p-5 mt-8">
-                        <h4 class="text-white font-semibold mb-3 flex items-center gap-2">
-                            <i class="fa-regular fa-clock text-brand"></i> Opening hours
-                        </h4>
-                        <div class="flex justify-between text-sm text-slate-400 border-b border-white/10 pb-2 mb-2">
-                            <span>Monday - Friday</span>
-                            <span class="text-white font-medium">9:00 AM - 5:00 PM</span>
-                        </div>
-                        <div class="flex justify-between text-sm text-slate-400">
-                            <span>Saturday - Sunday</span>
-                            <span class="text-brand font-medium">Closed</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-7 bg-slate-900 rounded-2xl p-6 sm:p-8 shadow-2xl border border-white/5 relative">
-                    <div class="absolute top-0 right-0 w-20 h-20 bg-brand rounded-bl-full opacity-20"></div>
-
-                    <form action="https://formspree.io/f/xojpnwzl" method="POST" class="space-y-5 relative z-10">
-                        
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                            <div class="space-y-1.5">
-                                <label for="name" class="text-sm font-medium text-slate-300">Full name <span class="text-brand">*</span></label>
-                                <input type="text" name="name" id="name" required placeholder="John Smith" 
-                                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all">
-                            </div>
-                            <div class="space-y-1.5">
-                                <label for="company" class="text-sm font-medium text-slate-300">Company name</label>
-                                <input type="text" name="company" id="company" placeholder="XYZ Industries Inc." 
-                                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all">
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                            <div class="space-y-1.5">
-                                <label for="title" class="text-sm font-medium text-slate-300">Specify your title</label>
-                                <input type="text" name="title" id="title" placeholder="Purchasing Director"
-                                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all">
-                            </div>
-                            <div class="space-y-1.5">
-                                <label for="email" class="text-sm font-medium text-slate-300">Business email <span class="text-brand">*</span></label>
-                                <input type="email" name="email" id="email" required placeholder="john@company.com" 
-                                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all">
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                            <div class="space-y-1.5">
-                                <label for="phone" class="text-sm font-medium text-slate-300">Phone</label>
-                                <input type="tel" name="phone" id="phone" placeholder="(555) 123-4567" 
-                                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all">
-                            </div>
-                            <div class="space-y-1.5">
-                                <label for="subject" class="text-sm font-medium text-slate-300">Subject of your request</label>
-                                <div class="relative">
-                                    <select name="subject" id="subject" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white appearance-none focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all cursor-pointer">
-                                        <option value="Demande de devis" class="bg-slate-800 text-white">Quote request / Volume</option>
-                                        <option value="Information produit" class="bg-slate-800 text-white">Information about the 20618 Sleeve</option>
-                                        <option value="Autre" class="bg-slate-800 text-white">Other request</option>
-                                    </select>
-                                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-400">
-                                        <i class="fa-solid fa-chevron-down text-sm"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="pt-2 border-t border-white/10">
-                            <p class="text-sm font-semibold text-slate-300 mb-4">Application & requirements</p>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                                <div class="space-y-1.5">
-                                    <label for="application" class="text-sm font-medium text-slate-300">Application</label>
-                                    <input type="text" name="application" id="application" placeholder="e.g. Urethane pump, job site"
-                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all">
-                                </div>
-                                <div class="space-y-1.5">
-                                    <label for="domaine" class="text-sm font-medium text-slate-300">Sector</label>
-                                    <input type="text" name="domaine" id="domaine" placeholder="e.g. Construction, industrial"
-                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all">
-                                </div>
-                                <div class="space-y-1.5 sm:col-span-2">
-                                    <label for="marque_pompe" class="text-sm font-medium text-slate-300">Urethane pump brand?</label>
-                                    <input type="text" name="marque_pompe" id="marque_pompe" placeholder="e.g. Graco, Wagner"
-                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all">
-                                </div>
-                                <div class="space-y-1.5 sm:col-span-2">
-                                    <label for="region" class="text-sm font-medium text-slate-300">Location in Canada, region</label>
-                                    <input type="text" name="region" id="region" placeholder="e.g. Estrie, Quebec"
-                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all">
-                                </div>
-                                <div class="space-y-1.5">
-                                    <label for="nombre_equipements" class="text-sm font-medium text-slate-300">Number of pieces of equipment?</label>
-                                    <input type="number" name="nombre_equipements" id="nombre_equipements" min="1" placeholder="e.g. 4"
-                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all">
-                                </div>
-                                <div class="space-y-1.5">
-                                    <label for="diametre" class="text-sm font-medium text-slate-300">Diameter required?</label>
-                                    <input type="text" name="diametre" id="diametre" placeholder="e.g. 2 in"
-                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all">
-                                </div>
-                                <div class="space-y-1.5 sm:col-span-2">
-                                    <label for="longueur" class="text-sm font-medium text-slate-300">Length?</label>
-                                    <input type="text" name="longueur" id="longueur" placeholder="e.g. 50 ft"
-                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="space-y-1.5">
-                            <label for="message" class="text-sm font-medium text-slate-300">Your message <span class="text-brand">*</span></label>
-                            <textarea name="message" id="message" rows="4" required placeholder="How can we help you?" 
-                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all resize-none"></textarea>
-                        </div>
-
-                        <input type="hidden" name="_next" value="http://www.2meprotection.com/">
-                        <input type="text" name="_gotcha" style="display:none">
-
-                        <button type="submit" class="w-full bg-brand text-white font-bold py-4 rounded-xl hover:bg-brandLight hover:text-brand transition-all duration-300 shadow-lg shadow-brand/20 hover:-translate-y-0.5 flex justify-center items-center gap-2 group mt-4">
-                            <span>Send request</span>
-                            <i class="fa-solid fa-paper-plane group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
-                        </button>
-                        
-                        <p class="text-center text-xs text-slate-500 mt-4 flex items-center justify-center gap-1.5">
-                            <i class="fa-solid fa-lock text-slate-600"></i> Your information is secure and confidential.
-                        </p>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-[#0a0f1c] text-slate-400 py-8 border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            
-            <a href="index.html" class="flex items-center">
-                <img src="../logo.png" alt="2ME Protection Logo" class="h-8 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity">
-            </a>
-            
-            <p class="text-sm">&copy; <span id="year"></span> 2ME Protection. All rights reserved.</p>
-            <div class="flex gap-4 text-sm">
-                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
-                <a href="#" class="hover:text-white transition-colors">Terms</a>
-            </div>
-        </div>
-    </footer>
-    
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Set current year
-            document.getElementById("year").textContent = new Date().getFullYear();
-
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate-fade-up');
-                        entry.target.style.opacity = '1';
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            const animatedElements = document.querySelectorAll('.opacity-0.animate-fade-up');
-            
-            animatedElements.forEach(el => {
-                el.classList.remove('animate-fade-up');
-                observer.observe(el);
-            });
-        });
-    </script>
-    <script>
-        // Smooth Scroll Navbar logic
-        const navbar = document.getElementById('navbar');
-        const navLinks = document.querySelectorAll('.nav-link');
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-
-        function refreshLangToggleNav() {
-            document.querySelectorAll('.lang-toggle').forEach(function (toggle) {
-                if (navbar.classList.contains('nav-scrolled')) {
-                    toggle.classList.remove('border-white/25');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                // Scrolled State
-                navbar.classList.add('nav-scrolled');
-                navbar.classList.remove('nav-transparent');
-                
-                navLinks.forEach(link => {
-                    link.classList.remove('nav-text-light');
-                    link.classList.add('text-gray-600'); 
-                });
-
-                mobileMenuBtn.classList.remove('nav-text-light');
-                mobileMenuBtn.classList.add('text-gray-900');
-                refreshLangToggleNav();
-
-            } else {
-                // Transparent Top State
-                navbar.classList.add('nav-transparent');
-                navbar.classList.remove('nav-scrolled');
-                
-                navLinks.forEach(link => {
-                    link.classList.add('nav-text-light');
-                    link.classList.remove('text-gray-600');
-                });
-
-                mobileMenuBtn.classList.add('nav-text-light');
-                mobileMenuBtn.classList.remove('text-gray-900');
-                refreshLangToggleNav();
-            }
-        });
-
-        // Mobile Menu Toggle
-        const menu = document.getElementById('mobile-menu');
-        mobileMenuBtn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-    </script>
+<body class="bg-gray-50 font-sans text-slate-800 antialiased">
+<div class="atmosphere" aria-hidden="true"><span class="orb-a"></span><span class="orb-b"></span></div>
+<header id="navbar" class="nav-scrolled border-b border-slate-200 bg-white">
+<div class="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+<div class="mb-3 flex justify-end">
+<div class="lang-toggle" role="group" aria-label="Choose a language">
+<a href="../index.html" data-lang-switch="fr">FR</a>
+<a href="index.html" data-lang-switch="en">EN</a>
+</div>
+</div>
+<nav aria-label="Main menu">
+<div class="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-5">
+<a class="flex h-full min-h-[3.25rem] items-center justify-center rounded-xl border-2 px-3 py-3 text-center text-sm font-semibold leading-snug transition-colors border-brand bg-brand text-white" href="index.html" aria-current="page">Home</a>
+<a class="flex h-full min-h-[3.25rem] items-center justify-center rounded-xl border-2 px-3 py-3 text-center text-sm font-semibold leading-snug transition-colors border-slate-200 bg-white text-slate-800 hover:border-brand hover:text-brand" href="insulation-sleeve.html">Protective sleeve, insulation sector</a>
+<a class="flex h-full min-h-[3.25rem] items-center justify-center rounded-xl border-2 px-3 py-3 text-center text-sm font-semibold leading-snug transition-colors border-slate-200 bg-white text-slate-800 hover:border-brand hover:text-brand" href="custom-sleeves.html">Custom protective sleeves</a>
+<a class="flex h-full min-h-[3.25rem] items-center justify-center rounded-xl border-2 px-3 py-3 text-center text-sm font-semibold leading-snug transition-colors border-slate-200 bg-white text-slate-800 hover:border-brand hover:text-brand" href="about.html">About</a>
+<a class="flex h-full min-h-[3.25rem] items-center justify-center rounded-xl border-2 px-3 py-3 text-center text-sm font-semibold leading-snug transition-colors border-slate-200 bg-white text-slate-800 hover:border-brand hover:text-brand" href="contact.html">Contact us</a>
+</div>
+</nav>
+<div class="mt-4 grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-4">
+<div class="flex h-full flex-col items-start gap-3 rounded-2xl border-2 border-slate-200 bg-white p-4 sm:flex-row sm:items-center">
+<img src="../logo.png" alt="Logo de 2ME Protection inc." class="h-14 w-auto max-w-[8.5rem] shrink-0 object-contain sm:h-16" width="1219" height="596">
+<div class="min-w-0 text-sm leading-relaxed">
+<p class="font-bold text-slate-900">2ME Protection inc.</p>
+<p>82A, chemin Dion<br>Sherbrooke (Québec) Canada<br>J1R 0R8</p>
+</div>
+</div>
+<div class="h-full rounded-2xl border-2 border-slate-200 bg-white p-4">
+<p class="font-semibold text-slate-900"><i class="fa-regular fa-clock mr-2 text-brand" aria-hidden="true"></i>Business hours</p>
+<dl class="mt-3 space-y-2 text-sm">
+<div class="flex items-center justify-between gap-4"><dt>Monday - Friday</dt><dd class="font-semibold text-slate-900">9h00 - 17h00</dd></div>
+<div class="flex items-center justify-between gap-4"><dt>Saturday and Sunday</dt><dd class="font-semibold text-brand">Closed</dd></div>
+</dl>
+</div>
+<a href="tel:8196796324" class="block h-full rounded-2xl border-2 border-slate-200 bg-white p-4 transition-colors hover:border-brand">
+<p class="font-semibold text-slate-900"><i class="fa-solid fa-phone mr-2 text-brand" aria-hidden="true"></i>Phone</p>
+<p class="mt-3 text-lg font-bold text-brand">819&nbsp;679-6324</p>
+</a>
+<a href="mailto:mpouliot@2meprotection.com" class="block h-full rounded-2xl border-2 border-slate-200 bg-white p-4 transition-colors hover:border-brand">
+<p class="font-semibold text-slate-900"><i class="fa-solid fa-envelope mr-2 text-brand" aria-hidden="true"></i>Email</p>
+<p class="mt-3 break-all font-semibold text-brand">mpouliot@2meprotection.com</p>
+</a>
+</div>
+</div>
+</header>
+<section class="relative overflow-hidden bg-primary text-white">
+<div class="pointer-events-none absolute -right-16 -top-24 h-72 w-72 rounded-full bg-brand/30 blur-3xl" aria-hidden="true"></div>
+<div class="relative mx-auto max-w-5xl px-4 py-14 sm:px-6 lg:px-8"><h1 class="text-xl font-semibold leading-relaxed md:text-2xl">PROUDLY DESIGNED AND MANUFACTURED IN CANADA, the innovative, robust and high-performance protective sleeve (scuffguard) from 2ME PROTECTION INC. was created to protect hoses, cables and wires in the best possible way. It allows easier and faster installation on existing assemblies, lasts longer and adapts without compromise.</h1></div>
+</section>
+<main>
+<section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 gap-6 md:grid-cols-2"><article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm" data-anim style="--d:0.0s">
+<h2 class="text-base font-bold leading-snug text-slate-900">FITTED WITH A HOOK-AND-LOOP CLOSURE</h2>
+<ul class="mt-4 space-y-3 text-slate-700"><li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-brand" aria-hidden="true"></i><span>Reopenable, reclosable and reusable;</span></li><li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-brand" aria-hidden="true"></i><span>Provides a perfect seal;</span></li><li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-brand" aria-hidden="true"></i><span>Makes it possible to inspect hoses, cables and wires and to upgrade them without complete disassembly and without replacement, so that production is not reduced.</span></li></ul>
+</article><article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm" data-anim style="--d:0.12s">
+<h2 class="text-base font-bold leading-snug text-slate-900">NO EXTERIOR SEAM</h2>
+<ul class="mt-4 space-y-3 text-slate-700"><li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-brand" aria-hidden="true"></i><span>No point of friction;</span></li><li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-brand" aria-hidden="true"></i><span>Protects fittings and flex zones.</span></li></ul>
+</article><article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm" data-anim style="--d:0.24s">
+<h2 class="text-base font-bold leading-snug text-slate-900">IN VERY TOUGH, WATERPROOF FLEXIBLE PVC</h2>
+<ul class="mt-4 space-y-3 text-slate-700"><li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-brand" aria-hidden="true"></i><span>Provides a high level of protection against solvents, abrasives, chemicals and impact</span></li><li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-brand" aria-hidden="true"></i><span>Highly resistant to alkalinity (Cement, fresh concrete or certain industrial products);</span></li><li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-brand" aria-hidden="true"></i><span>Keeps your equipment working steadily;</span></li><li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-brand" aria-hidden="true"></i><span>Reduces premature wear and extends the service life of the equipment.</span></li></ul>
+</article><article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm" data-anim style="--d:0.36s">
+<h2 class="text-base font-bold leading-snug text-slate-900">COMPLIANT WITH NFPA STANDARDS</h2>
+<ul class="mt-4 space-y-3 text-slate-700"><li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-brand" aria-hidden="true"></i><span>Meets strict NFPA fire prevention and safety codes.</span></li></ul>
+</article></div>
+<article class="mt-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:p-8" data-anim>
+<h2 class="text-base font-bold text-slate-900">WITH A JUNCTION SECTION</h2>
+<p class="mt-4 leading-relaxed text-slate-700">One of the two ends has a wider section specially designed to cover two hoses end to end in a continuous, even and secure way, while protecting the fittings and the next protective sleeve.</p>
+</article>
+</section>
+<section class="bg-primary">
+<p class="mx-auto max-w-5xl px-4 py-12 text-center text-lg font-bold leading-relaxed text-white sm:px-6 md:text-2xl">THE PROTECTIVE SLEEVE FROM 2ME PROTECTION INC. PROTECTS YOUR INSTALLATIONS IN THE BEST POSSIBLE WAY, IN EVERY SITUATION AND IN THE MOST HOSTILE ENVIRONMENTS.</p>
+</section>
+<section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+<a class="flex items-center justify-center rounded-2xl border-2 border-brand bg-brandLight p-8 text-center text-lg font-bold leading-snug text-slate-900 shadow-sm transition-colors hover:bg-brand hover:text-white" href="insulation-sleeve.html">PROTECTIVE SLEEVE<br>INSULATION SECTOR</a>
+<a class="flex items-center justify-center rounded-2xl border-2 border-brand bg-brandLight p-8 text-center text-lg font-bold leading-snug text-slate-900 shadow-sm transition-colors hover:bg-brand hover:text-white" href="custom-sleeves.html">CUSTOM<br>PROTECTIVE SLEEVES</a>
+</div>
+<figure class="mx-auto mt-12 max-w-4xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg" data-anim>
+<img src="../images/gaine-protection.webp" alt="Gaine de protection 20618 de 2ME Protection inc." width="1100" height="733" class="h-auto w-full">
+</figure>
+<div class="mt-12"><div class="text-center">
+<a href="contact.html" class="text-xl font-bold text-slate-900 hover:text-brand">CONTACT US</a>
+<p class="mt-2 text-lg font-bold"><a class="text-brand hover:text-brandDark" href="tel:8196796324">819&nbsp;679-6324</a></p>
+<p class="mt-1"><a class="font-semibold text-brand hover:text-brandDark" href="mailto:mpouliot@2meprotection.com">mpouliot@2meprotection.com</a></p>
+</div></div>
+</section>
+</main>
+<footer class="border-t border-white/10 bg-[#0a0f1c] py-8 text-slate-400">
+<div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 sm:px-6 md:flex-row lg:px-8">
+<a href="index.html"><img src="../logo.png" alt="Logo de 2ME Protection inc." class="h-8 w-auto object-contain opacity-80" width="1219" height="596"></a>
+<p class="text-sm">&copy; <span id="year"></span> 2ME Protection inc. All rights reserved.</p>
+</div>
+</footer>
+<script src="../js/site.js"></script>
 </body>
 </html>
