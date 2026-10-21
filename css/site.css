@@ -40,9 +40,8 @@ body {
     50% { transform: translate3d(-32px, 20px, 0); }
 }
 
-/* Brand colours in plain CSS. The Tailwind CDN does not keep custom
-   colours from a config file loaded before it, which left white type
-   on a blank background. */
+/* Brand colours in plain CSS, same values as tailwind.config.js.
+   These rules keep the colours if a utility is missing from the build. */
 .bg-primary { background-color: #0f172a !important; }
 .bg-brand { background-color: #00569d !important; }
 .bg-brandDark { background-color: #003f75 !important; }
