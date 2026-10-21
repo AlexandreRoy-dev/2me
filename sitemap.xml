@@ -1,17 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://2me.roymarketing.ca/</loc><lastmod>2026-10-02</lastmod></url>
-<url><loc>https://2me.roymarketing.ca/gaine-isolation.html</loc><lastmod>2026-10-02</lastmod></url>
-<url><loc>https://2me.roymarketing.ca/gaine-sur-mesure.html</loc><lastmod>2026-10-02</lastmod></url>
-<url><loc>https://2me.roymarketing.ca/a-propos.html</loc><lastmod>2026-10-02</lastmod></url>
-<url><loc>https://2me.roymarketing.ca/contact.html</loc><lastmod>2026-10-02</lastmod></url>
-<url><loc>https://2me.roymarketing.ca/demande-soumission.html</loc><lastmod>2026-10-02</lastmod></url>
-<url><loc>https://2me.roymarketing.ca/demande-devis.html</loc><lastmod>2026-10-02</lastmod></url>
-<url><loc>https://2me.roymarketing.ca/en/</loc><lastmod>2026-10-02</lastmod></url>
-<url><loc>https://2me.roymarketing.ca/en/insulation-sleeve.html</loc><lastmod>2026-10-02</lastmod></url>
-<url><loc>https://2me.roymarketing.ca/en/custom-sleeves.html</loc><lastmod>2026-10-02</lastmod></url>
-<url><loc>https://2me.roymarketing.ca/en/about.html</loc><lastmod>2026-10-02</lastmod></url>
-<url><loc>https://2me.roymarketing.ca/en/contact.html</loc><lastmod>2026-10-02</lastmod></url>
-<url><loc>https://2me.roymarketing.ca/en/quote.html</loc><lastmod>2026-10-02</lastmod></url>
-<url><loc>https://2me.roymarketing.ca/en/estimate.html</loc><lastmod>2026-10-02</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://2me.roymarketing.ca/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://2me.roymarketing.ca/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://2me.roymarketing.ca/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://2me.roymarketing.ca/"/>
+  </url>
+  <url>
+    <loc>https://2me.roymarketing.ca/gaine-isolation.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://2me.roymarketing.ca/gaine-isolation.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://2me.roymarketing.ca/en/insulation-sleeve.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://2me.roymarketing.ca/gaine-isolation.html"/>
+  </url>
+  <url>
+    <loc>https://2me.roymarketing.ca/gaine-sur-mesure.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://2me.roymarketing.ca/gaine-sur-mesure.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://2me.roymarketing.ca/en/custom-sleeves.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://2me.roymarketing.ca/gaine-sur-mesure.html"/>
+  </url>
+  <url>
+    <loc>https://2me.roymarketing.ca/a-propos.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://2me.roymarketing.ca/a-propos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://2me.roymarketing.ca/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://2me.roymarketing.ca/a-propos.html"/>
+  </url>
+  <url>
+    <loc>https://2me.roymarketing.ca/contact.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://2me.roymarketing.ca/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://2me.roymarketing.ca/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://2me.roymarketing.ca/contact.html"/>
+  </url>
+  <url>
+    <loc>https://2me.roymarketing.ca/demande-soumission.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://2me.roymarketing.ca/demande-soumission.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://2me.roymarketing.ca/en/quote.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://2me.roymarketing.ca/demande-soumission.html"/>
+  </url>
+  <url>
+    <loc>https://2me.roymarketing.ca/demande-devis.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://2me.roymarketing.ca/demande-devis.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://2me.roymarketing.ca/en/estimate.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://2me.roymarketing.ca/demande-devis.html"/>
+  </url>
+  <url>
+    <loc>https://2me.roymarketing.ca/en/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://2me.roymarketing.ca/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://2me.roymarketing.ca/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://2me.roymarketing.ca/"/>
+  </url>
+  <url>
+    <loc>https://2me.roymarketing.ca/en/insulation-sleeve.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://2me.roymarketing.ca/gaine-isolation.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://2me.roymarketing.ca/en/insulation-sleeve.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://2me.roymarketing.ca/gaine-isolation.html"/>
+  </url>
+  <url>
+    <loc>https://2me.roymarketing.ca/en/custom-sleeves.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://2me.roymarketing.ca/gaine-sur-mesure.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://2me.roymarketing.ca/en/custom-sleeves.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://2me.roymarketing.ca/gaine-sur-mesure.html"/>
+  </url>
+  <url>
+    <loc>https://2me.roymarketing.ca/en/about.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://2me.roymarketing.ca/a-propos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://2me.roymarketing.ca/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://2me.roymarketing.ca/a-propos.html"/>
+  </url>
+  <url>
+    <loc>https://2me.roymarketing.ca/en/contact.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://2me.roymarketing.ca/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://2me.roymarketing.ca/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://2me.roymarketing.ca/contact.html"/>
+  </url>
+  <url>
+    <loc>https://2me.roymarketing.ca/en/quote.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://2me.roymarketing.ca/demande-soumission.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://2me.roymarketing.ca/en/quote.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://2me.roymarketing.ca/demande-soumission.html"/>
+  </url>
+  <url>
+    <loc>https://2me.roymarketing.ca/en/estimate.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://2me.roymarketing.ca/demande-devis.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://2me.roymarketing.ca/en/estimate.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://2me.roymarketing.ca/demande-devis.html"/>
+  </url>
 </urlset>

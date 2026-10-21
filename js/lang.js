@@ -2,7 +2,7 @@
     'use strict';
 
     var ROUTES = {
-        home: { fr: 'index.html', en: 'en/index.html' },
+        home: { fr: '/', en: '/en/' },
         isolation: { fr: 'gaine-isolation.html', en: 'en/insulation-sleeve.html' },
         custom: { fr: 'gaine-sur-mesure.html', en: 'en/custom-sleeves.html' },
         about: { fr: 'a-propos.html', en: 'en/about.html' },
@@ -45,6 +45,9 @@
     function routeUrl(lang) {
         var slug = getSlug();
         var target = ROUTES[slug][lang];
+        if (target.charAt(0) === '/') {
+            return target;
+        }
         if (lang === 'en' && inEnDir()) {
             return target.indexOf('en/') === 0 ? target.slice(3) : target;
         }
