@@ -2,13 +2,13 @@
     'use strict';
 
     var ROUTES = {
-        home: { fr: 'index.html', en: 'en/index.html' },
-        isolation: { fr: 'gaine-isolation.html', en: 'en/insulation-sleeve.html' },
-        custom: { fr: 'gaine-sur-mesure.html', en: 'en/custom-sleeves.html' },
-        about: { fr: 'a-propos.html', en: 'en/about.html' },
-        contact: { fr: 'contact.html', en: 'en/contact.html' },
-        quote: { fr: 'demande-soumission.html', en: 'en/quote.html' },
-        estimate: { fr: 'demande-devis.html', en: 'en/estimate.html' }
+        home: { fr: '/', en: '/en/' },
+        isolation: { fr: '/gaine-isolation.html', en: '/en/insulation-sleeve.html' },
+        custom: { fr: '/gaine-sur-mesure.html', en: '/en/custom-sleeves.html' },
+        about: { fr: '/a-propos.html', en: '/en/about.html' },
+        contact: { fr: '/contact.html', en: '/en/contact.html' },
+        quote: { fr: '/demande-soumission.html', en: '/en/quote.html' },
+        estimate: { fr: '/demande-devis.html', en: '/en/estimate.html' }
     };
 
     var SLUGS = {
@@ -38,20 +38,13 @@
     }
 
     function getSlug() {
-        var name = window.location.pathname.split('/').pop() || 'index.html';
+        var path = window.location.pathname.replace(/\/+$/, '');
+        var name = path.split('/').pop() || 'index.html';
         return SLUGS[name] || 'home';
     }
 
     function routeUrl(lang) {
-        var slug = getSlug();
-        var target = ROUTES[slug][lang];
-        if (lang === 'en' && inEnDir()) {
-            return target.indexOf('en/') === 0 ? target.slice(3) : target;
-        }
-        if (lang === 'fr' && inEnDir()) {
-            return '../' + ROUTES[slug].fr;
-        }
-        return target;
+        return ROUTES[getSlug()][lang];
     }
 
     function markActiveToggle() {
