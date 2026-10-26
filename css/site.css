@@ -85,3 +85,120 @@ a[aria-current="page"] {
         transform: none;
     }
 }
+
+/* Compact header mark. The large logo lives in the bottom contact box. */
+.site-header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.site-brand {
+    display: inline-flex;
+    flex-shrink: 0;
+    line-height: 0;
+}
+
+.brand-mark {
+    display: block;
+    height: 2.5rem;
+    width: auto;
+    object-fit: contain;
+}
+
+@media (min-width: 640px) {
+    .brand-mark {
+        height: 3rem;
+    }
+}
+
+/* One contact box, directly above the dark footer. */
+.page-contact {
+    padding-bottom: 2.5rem;
+}
+
+.page-contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    align-items: center;
+}
+
+.page-contact-id {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.page-contact-logo {
+    display: block;
+    height: 7rem;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+@media (min-width: 480px) {
+    .page-contact-id {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+@media (min-width: 640px) {
+    .page-contact-logo {
+        height: 8rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .page-contact-grid {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+    }
+}
+
+@media (min-width: 1280px) {
+    .page-contact-grid {
+        grid-template-columns: minmax(16rem, 1.7fr) minmax(14rem, 1fr) auto auto;
+        align-items: center;
+    }
+}
+
+/* Pale contact panel. Colour is brandLight #e0f2fe, with the existing brand border. */
+.contact-panel {
+    max-width: 40rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Body paragraphs and bullet lists. Titles, buttons, CTAs and forms are untouched. */
+.copy {
+    text-align: justify;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    hyphenate-limit-chars: 6 3 2;
+}
+
+ul.copy > li > span {
+    display: block;
+    flex: 1 1 auto;
+    min-width: 0;
+    text-align: justify;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    hyphenate-limit-chars: 6 3 2;
+}
+
+/* At 375px some lines opened gaps of 30px to 50px (English bullets, the About hero).
+   Below 480px, body copy stays left-aligned. Hyphenation stays on so long words can still break. */
+@media (max-width: 479px) {
+    .copy,
+    ul.copy > li > span {
+        text-align: left;
+    }
+}
